@@ -27,6 +27,14 @@ for(let i = 0; i < 5; i++)
 console.log(matrix);
 
 //encrypting the plain text
+for(let i = 0; i < plainText.length; i++)
+{
+    if(plainText[i] == "J")
+    {
+        plainText[i] = "I";   //convert 'J' to 'I' in the plaintext to maintain consistency
+    }
+}
+
 if(plainText.length / 2 != 0)
 {
     plainText.push("X");
@@ -53,7 +61,6 @@ for(let i = 0; i < plainText.length; i = i + 2)
 {
     let { i: firstI, j: firstJ } = findElementInTheMatrix(plainText[i], matrix);
     let { i: secondI, j: secondJ } = findElementInTheMatrix(plainText[i + 1], matrix);
-    console.log(firstI, firstJ, secondI, secondJ);
 
     if(firstI == secondI)   //same row
     {
